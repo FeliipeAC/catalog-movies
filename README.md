@@ -1,7 +1,10 @@
-<<<<<<< HEAD
-# CatalogMovies
+# Catalog Movies
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+
+## Description
+
+Projeto simples que realiza busca por séries e filmes através da [OMDb API](http://www.omdbapi.com/)
 
 ## Development server
 
@@ -26,7 +29,3 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-=======
-# catalog-movies
-Busca por filmes e séries através da API do IMDb
->>>>>>> fda45e2881e513fab8d6b27a60a1fe2911544bb3
