@@ -1,0 +1,70 @@
+<ng-container *ngIf="dados; else loading">
+    <button mat-icon-button mat-dialog-close class="bt-close">
+        <mat-icon>clear</mat-icon>
+    </button>
+    <div class="poster zoomInLeft">
+        <img [src]="dados.Poster != 'N/A' ? dados.Poster : 'assets/imgs/poster-placeholder.png'" 
+        [alt]="dados.Title">
+        <div class="legend">
+            <div class="rating">
+                <div class="back">
+                    ★★★★★
+                </div>
+                <div class="front" [ngStyle]="{'width.%': ratingPercent()}">
+                    ★★★★★
+                </div>
+            </div>
+            <span>({{dados.imdbRating}})</span>
+        </div>
+    </div>
+    <div class="box fadeInRight">
+        <div class="top">
+            <h1 class="fadeInDown">{{dados.Title}}</h1>
+            <div class="short-info">
+                <div class="item">
+                    <mat-icon>date_range</mat-icon>
+                    {{dados.Year}}
+                </div>
+                <div class="item">
+                    <mat-icon>room_outline</mat-icon>
+                    {{dados.Country}}
+                </div>
+                <div class="item" *ngIf="dados.Runtime && dados.Runtime !== 'N/A'">
+                    <mat-icon>access_time</mat-icon>
+                    {{dados.Runtime}}
+                </div>
+                <div class="item">
+                    <mat-icon>language</mat-icon>
+                    {{dados.Language}}
+                </div>
+            </div>
+    
+            <p>{{dados.Plot}}</p>
+    
+            <div class="direction">
+                <div class="item" *ngIf="dados.Production && dados.Production !== 'N/A'">
+                    <mat-icon>theaters</mat-icon>
+                    {{dados.Production}}
+                </div>
+                <div class="item" *ngIf="dados.Director  && dados.Director !== 'N/A'">
+                    <mat-icon>movie</mat-icon>
+                    {{dados.Director}}
+                </div>
+                <div class="item">
+                    <mat-icon>recent_actors</mat-icon>
+                    {{dados.Actors}}
+                </div>
+                <div class="item">
+                    <mat-icon>bookmark</mat-icon>
+                    {{dados.Genre}}
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-template #loading>
+<div class="loading">
+    <mat-spinner [diameter]="68"></mat-spinner>
+</div>
+</ng-template>

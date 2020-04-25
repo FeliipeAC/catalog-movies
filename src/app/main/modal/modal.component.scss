@@ -1,0 +1,147 @@
+.bt-close {
+    position: absolute;
+    right: 24px;
+    top: -64px;
+}
+
+.box {
+    // position: relative;
+    padding: 24px 24px 24px 53px;
+    height: 100%;
+    overflow-y: auto;
+    box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+    background: #424242;
+    animation-duration: .4s;
+
+    &::-webkit-scrollbar-track {
+        background-color: #2d2d2d;
+        margin: 8px 0;
+    }
+
+    &::-webkit-scrollbar {
+        width: 5px;
+        background-color: #2d2d2d;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: #656565;
+    }
+
+    mat-icon {
+        min-width: 10px;
+        min-height: 10px;
+        margin-right: 5px;
+    }
+}
+
+.poster {
+    width: 212px;
+    height: 312px;
+    position: absolute;
+    left: -159px;
+    top: -64px;
+    z-index: 2;
+    border: 1px solid #a5a5a5;
+    border-radius: 4px;
+    animation-duration: .6s;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px
+    }
+
+    .legend {
+        // text-align: center;
+        padding-top: 2px;
+
+        .rating {
+            margin: 0 auto;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+
+            .front {
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                color: yellow;
+                overflow: hidden;
+            }
+        }
+
+        span {
+            padding-left: 8px;
+            font-size: 12px;
+        }
+    }
+}
+
+.top {
+    h1 {
+        font-size: 22px;
+        margin: 0;
+        position: absolute;
+        top: -56px;
+        left: 77px;
+        right: 74px;
+        animation-duration: .6s;
+    }
+
+    .short-info {
+        display: flex;
+        // align-items: center;
+
+        .item {
+            font-size: 12px;
+
+            mat-icon {
+                height: 14px;
+                width: 14px;
+                line-height: 14px;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .direction {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-top: 24px;
+
+        .item {
+            margin-bottom: 12px;
+        }
+    }
+}
+
+.item {
+    display: flex;
+    // align-items: center;
+    font-size: 14px;
+    color: #cacaca;
+
+    mat-icon {
+        height: 18px;
+        width: 18px;
+        line-height: 18px;
+        font-size: 18px;
+        margin-right: 12px;
+    }
+
+    &:not(:last-of-type) {
+        margin-right: 16px;
+    }
+}
+
+.loading {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

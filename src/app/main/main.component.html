@@ -1,0 +1,69 @@
+<header>
+    <div class="search-bar">
+        <div class="logo-name">
+            <div class="rainbow">
+                <img src="../../assets/svgs/play_circle.svg" alt="Play circle">
+            </div>
+        </div>
+
+        <div class="search">
+            <input type="text" [formControl]="controlSearch" #inputSearch placeholder="Search movie, series..."
+                (keyup.enter)="search()">
+        </div>
+        <button mat-fab color="primary" [disabled]="!controlSearch.value" (click)="search()">
+            <mat-icon>search</mat-icon>
+        </button>
+    </div>
+</header>
+
+
+<div class="content">
+    <div class="box-results">
+        <div>
+            <p>Filter by:</p>
+            <mat-select [formControl]="controlSelect" [disabled]="!controlSearch.value">
+                <mat-option *ngFor="let item of filterOptions" [value]="item.key">
+                    {{item.value}}
+                </mat-option>
+            </mat-select>
+        </div>
+        <mat-paginator #matPaginator [ngStyle]="{'opacity': data?.length > 0 ? '1' : '0'}" [length]="totalResults"
+            [pageSize]="10" [showFirstLastButtons]="true" [hidePageSize]="true" (page)="changePage($event)">
+        </mat-paginator>
+    </div>
+    <div class="box-cards" *ngIf="data.length > 0">
+        <ng-container *ngFor="let item of data; let i = index">
+            <app-card [data]="item" (eventCard)="openModal($event)" data-aos="fade-down"
+                [attr.data-aos-delay]="100 * i">
+            </app-card>
+        </ng-container>
+    </div>
+    <!-- <ng-template #noResults> -->
+    <div class="loading fadeIn" [hidden]="!loading"></div>
+    <div class="error fadeIn" [hidden]="!error">
+        <p>{{textError}}</p>
+    </div>
+    <div [hidden]="data?.length > 0 || loading || error" class="wait-search fadeIn"></div>
+    <!-- <div class="loading" *ngIf="loading; else check"></div>
+        <ng-template #check>
+            <div class="error fadeIn" *ngIf="error; else searchWait">
+                <p>{{textError}}</p>
+            </div>
+            <ng-template #searchWait>
+                <div class="wait-search fadeIn"></div>
+            </ng-template>
+    
+        </ng-template> -->
+    <!-- </ng-template> -->
+
+</div>
+<router-outlet></router-outlet>
+<footer>
+    <a href="http://github.com/feliipeac" title="View my profile on GitHub" target="blank">
+        <img src="assets/imgs/GitHub-Mark-32px.png" alt="GitHub">
+        Felipe Andrade
+    </a>
+    <span>
+        Copyright &copy;	{{currentYear}}
+    </span>
+</footer>

@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import 'assets/animation/animation.scss';
+@import 'aos/dist/aos.css';
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+    height: 100%;
+}
+
+.mat-dialog-container {
+    overflow: inherit !important;
+    position: relative;
+    box-shadow: none;
+    background-color: transparent;
+    padding: 0;
+    right: -77px;
+}
+
+.cdk-overlay-dark-backdrop {
+    background: rgba(0, 0, 0, 0.68) !important;
+}

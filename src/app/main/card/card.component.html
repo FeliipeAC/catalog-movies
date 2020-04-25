@@ -1,0 +1,11 @@
+<div class="card" (click)="viewMore()">
+    <figure>
+        <img [src]="data.Poster != 'N/A' ? data.Poster : 'assets/imgs/poster-placeholder.png'" [alt]="data.Title">
+        <!-- <span [class]="data.Type">{{data.Type}}</span> -->
+    </figure>
+    <div>
+        <span>{{data.Year}}</span>
+        <span [class]="data.Type">{{data.Type}}</span>
+        <h2>{{data.Title}}</h2>
+    </div>
+</div>
